@@ -1,0 +1,32 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "image": "/image/photo_2026-10-24_12-39-04.jpg",
+      "title": "تیشرت عروس مرده",
+      "description": "دو نخ",
+      "price": 25
+    },
+    {
+      "id": "2",
+      "image": "/image/photo_2026-10-24_12-38-59.jpg",
+      "title": "تیشرت مرد عنکبوتی",
+      "description": "دو نخ",
+      "price": 20
+    },
+    {
+      "id": "3",
+      "image": "/image/photo_2026-10-24_12-34-36.jpg",
+      "title": "تیشرت  باد بر میخیزد",
+      "description": "دو نخ",
+      "price": 18
+    },
+    {
+      "id": "4",
+      "image": "/image/photo_2026-10-24_12-34-43.jpg",
+      "title": "تیشرت  باد بر میخیزد",
+      "description": "دو نخ",
+      "price": 18
+    }
+  ]
+}
