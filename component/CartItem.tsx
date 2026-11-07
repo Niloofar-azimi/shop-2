@@ -1,22 +1,33 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { IProductItemProps } from './ProductItem';
+import AddToCart from './addToCart';
+interface ICartItemsProps{
+  id:number,
+  qty:number
 
-function CartItem() {
+}
+
+function CartItem({id,qty}:ICartItemsProps) {
+  const[data,setData]=useState({} as IProductItemProps);
+  useEffect(()=>{
+    axios(`http://localhost:3001/${id}`).then(result=>{
+      const {data}=result
+      setData(data);
+    })
+  },[id])
   return (
         <div className='grid grid-cols-12 mb-4'>
         <div className='bg-gray-500 col-span-10 text-right p-4 text-lg '>
-          <h1>اسم محصول</h1>
-          <p>تعداد:<span>2</span></p>
-          <p className='rtl'>قیمت:<span>15$</span></p>
-               <div className='m-7'>
-                   <button className='px-4 py-2 bg-gray-700 text-white rounded-2xl'>+</button>
-                <span className='mx-4'>3</span>
-                        <button className='px-4 py-2 bg-gray-700 text-white rounded-2xl'>-</button>
-     </div>
-
+          <h1>{data.title}</h1>
+          <p>تعداد:<span>{qty}</span></p>
+          <p className='rtl'>قیمت:<span>{data.price}</span></p>
+         <AddToCart id={id.toString()}/>
         </div>
-        <div className='col-span-2'>
-          <img src="/image/photo_2026-10-24_12-39-04.jpg" />
-        </div>
+        
+          <img src={data.image}
+          className='col-span-2' />
+        
       </div>
     
   )

@@ -11,8 +11,9 @@ interface IProductProps{
 }
 
 async function Product({params}:IProductProps) {
+
     const {id}=await params;
-      const responce=await fetch(`http://localhost:3000/product/${id}`);
+      const responce=await fetch(`http://localhost:3001/product/${id}`);
       const data= await responce.json() as IProductItemProps;
       console.log("PRODUCT PAGE RENDERED");
   return (

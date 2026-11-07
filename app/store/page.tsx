@@ -4,7 +4,8 @@ import Link from "next/link";
 import { IProductItemProps } from "@/component/ProductItem";
 
 export default async function Store() {
-  const responce=await fetch("http://localhost:3000/product")
+  
+  const responce=await fetch("http://localhost:3001/product")
   const data= await responce.json() as IProductItemProps[]
    
   return (

@@ -1,12 +1,25 @@
+"use client"
 import CartItem from '@/component/CartItem'
 import Container from '@/component/Container'
+import { useShoppingCreatContext } from '@/context/ShoppingCartContext'
 import React from 'react'
 
-function Cart() {
+
+
+
+ export async function  Cart() {
+  const {cartItem}=useShoppingCreatContext()
+  
   return (
     <Container>
       <h1 className='text-right my-4 font-bold'>سبد خرید</h1>
-      <CartItem/>
+      <div>
+        {cartItem.map((item)=>(
+           <CartItem key={item.id} {...item}/>
+
+        ))}
+       
+      </div>
    
       <div className='border shadow-md text-right p-4'>
         <h1 className='rtl'>قیمت کل:<span>77$</span></h1>
