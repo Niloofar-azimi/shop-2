@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { IProductItemProps } from './ProductItem';
-import AddToCart from './AddToCart';
+import AddToCart from './addToCart';
 import { formatNumberWithCommas } from '@/Utils/Number';
 interface ICartItemsProps{
   id:number,

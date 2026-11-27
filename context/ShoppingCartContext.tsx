@@ -66,7 +66,7 @@ export function ShoppingCreatContextProvider({
   };
   const handleDecreaseProductQty=(id:number)=>{
     setCartItem(currentItems=>{
-      let isLastOne=currentItems.find(item=>item.id==id)?.qty==1;
+      const isLastOne=currentItems.find(item=>item.id==id)?.qty==1;
       if(isLastOne){
         return currentItems.filter(item=>item.id != id)
       }
