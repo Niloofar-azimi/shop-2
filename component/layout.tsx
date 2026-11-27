@@ -1,14 +1,16 @@
 import React from 'react'
 import Navbar from './Navbar';
-interface ILayout{
-    children:React.ReactNode;
+
+interface ILayout {
+    children: React.ReactNode;
 }
 
-function Layout({children}:ILayout) {
+function Layout({ children }: ILayout) {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
         <Navbar/>
-        {children}</div>
+        <main className="flex-1">{children}</main>
+    </div>
   )
 }
 

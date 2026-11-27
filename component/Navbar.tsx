@@ -15,7 +15,16 @@ function Navbar() {
             {
         href:"/store",
         title:"Store"
+    },
+         {
+        href:"/dashbord",
+        title:"Dashbord"
+    },
+    {
+        href:"/login",
+        title:"Login"
     }
+
 ]
   return (
     <div className=' flex justify-between flex-row-reverse shadow p-4'>
