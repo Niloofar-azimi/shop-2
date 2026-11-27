@@ -1,5 +1,5 @@
 import Container from '@/component/Container'
-import AddToCart from '@/component/AddToCart'
+import AddToCart from '@/component/addToCart'
 import { IProductItemProps } from '@/component/ProductItem'
 import { formatNumberWithCommas } from '@/Utils/Number'
 

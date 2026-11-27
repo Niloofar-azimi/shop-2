@@ -16,8 +16,8 @@ function Cart() {
     const[data,setData]=useState<IProductItemProps[]>([]);
     const[discountedPrice,setDiscountedPrice]=useState(0);
     const [finalPrice,setFinalPrice]=useState(0);
-    let totalPrice=cartItem.reduce((total,item)=>{
-              let selectProduct=data.find((product)=>product.id==item.id.toString())
+    const totalPrice=cartItem.reduce((total,item)=>{
+              const selectProduct=data.find((product)=>product.id==item.id.toString())
               return total+(selectProduct?.price||0)*item.qty
 
             },0);
@@ -26,8 +26,8 @@ function Cart() {
         axios(`http://localhost:3001/discount?code=${discountCode}`).then(
           (result)=>{
             const data=result.data as IDiscountData[];
-            let discountedPrice=totalPrice* data[0].percentage/10;
-            let finalPrice=totalPrice - discountedPrice;
+            const discountedPrice=totalPrice* data[0].percentage/10;
+            const finalPrice=totalPrice - discountedPrice;
             setDiscountedPrice(discountedPrice);
             setFinalPrice(finalPrice);
 

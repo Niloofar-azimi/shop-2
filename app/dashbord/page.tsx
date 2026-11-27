@@ -1,7 +1,6 @@
 "use client"
 import Container from "@/component/Container";
 import axios from "axios";
-import { url } from "inspector";
 import { ChangeEvent, useState } from "react";
 
 function Dashboard() {
